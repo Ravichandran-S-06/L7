@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chocolate House</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align the content */
+        }
+        h1 {
+            color: #6b4f4f;
+        }
+        h2 {
+            color: #4f6b6b;
+        }
+        form {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 300px; /* Set a fixed width for the forms */
+            text-align: center; /* Center the form text */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left; /* Align labels to the left */
+        }
+        input[type="text"], input[type="number"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: lightcoral;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+       
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            background-color: cornflowerblue;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Chocolate House</h1>
+    
+    <div class="button-container">
+        <a class="button" href="/view_flavors">View Flavors</a>
+        <a class="button" href="/view_ingredients">View Ingredients</a>
+        <a class="button" href="/view_suggestions">View Suggestions</a>
+    </div>
+
+    <h2>Add Seasonal Flavor</h2>
+    <form action="/add_flavor" method="post">
+        <label for="name">Flavor Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="season">Season:</label>
+        <input type="text" id="season" name="season" required>
+        <input type="submit" value="Add Flavor">
+    </form>
+
+    <h2>Update Ingredient Inventory</h2>
+    <form action="/update_ingredient" method="post">
+        <label for="ingredient_name">Ingredient Name:</label>
+        <input type="text" id="ingredient_name" name="name" required>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <input type="submit" value="Update Ingredient">
+    </form>
+
+    <h2>Add Customer Suggestion</h2>
+    <form action="/add_suggestion" method="post">
+        <label for="customer_name">Your Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+        <label for="suggested_flavor">Suggested Flavor:</label>
+        <input type="text" id="suggested_flavor" name="suggested_flavor" required>
+        <label for="allergy_concern">Allergy Concern:</label>
+        <input type="text" id="allergy_concern" name="allergy_concern">
+        <input type="submit" value="Submit Suggestion">
+    </form>
+
+    
+</body>
+</html>
